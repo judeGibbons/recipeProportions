@@ -19,13 +19,15 @@ Currently the measurements are all assumed to be grammes.
 
 ##Still to do
 
-- Produce sectioned canvas bar
+- Produce sectioned canvas bar (colour coded)
 - Create normalisation formulae and function
 - Write the list of ingredients on the page as they're entered
 - Produce further results divs on the page using Javascript 
+- Make the bar responsive - read the length when it's less than 600px
 
 
 ##Future ideas
 
-– Produce fallback for older browsers, maybe using ASCII art
+- Produce fallback for older browsers, maybe using ASCII art
 - Save results in a database so they can be returned to
+- All ingredients listed and displayed in alphabetical order

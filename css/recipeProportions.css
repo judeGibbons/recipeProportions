@@ -76,7 +76,9 @@ h1, #mainContent {
 }
 
 .formSection {
-	margin-bottom: 10px;
+	width: 20%;
+	float: left;
+	padding: 2.4%;
 }
 
 .formSection:last-child {
@@ -208,8 +210,7 @@ span.a11y-disabled {
 }
 
 button {
-    height: 2em;
-    width: 8em;
+    width: auto;
     font-size: 1em;
     font-weight: bold;
     border-radius: 6px;
