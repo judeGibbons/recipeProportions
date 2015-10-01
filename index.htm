@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="css/recipeProportions.css" rel="stylesheet"/>
+
+<title>Recipe proportions calculator</title>
+
+<script type="text/javascript" src="js/recipeProportions.calculate.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<h1><span class="logo"></span>Recipe proportions calculator</h1>
+<!-- add <img src="./images/recipe-finder.png" alt="Recipe finder logo"> when logo done -->
+</header>
+
+<div id="mainContent">
+
+<p>Working out proportions from recipes.</p>
+
+<form action="" method="get" name="recipeProportions" id="recipeProportions">
+
+<div class="formSection">
+<label for="ingredient">Ingredient</label>
+<select name="ingredient" id="ingredient">
+	<option value="flour">flour</option>
+	<option value="sugar">sugar</option>
+	<option value="butter">butter</option>
+</select>
+</div>
+
+<div class="formSection">
+<label for="count">Number of units</label>
+<input type="text" name="count" id="count" />
+</div>
+
+<div class="formSection">
+<label for="units">Units</label>
+<select name="units" id="units">
+	<option value="grammes">grammes</option>
+	<option value="ounces">ounces</option>
+	<option value="cups">cups</option>
+</select>
+</div>
+
+<div class="formSection">
+<button type="submit" name="saveIngredientButton" id="saveIngredientButton">Save this ingredient</button>
+</div>
+
+</form>
+
+<div id="results">
+<div id="recipeList"></div>
+<canvas id="recipeBar" width="600" height="20"></canvas>
+</div>
+
+</div>
+</body>
+</html>
