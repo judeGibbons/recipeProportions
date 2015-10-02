@@ -24,6 +24,7 @@ Currently the measurements are all assumed to be grammes.
 - Write the list of ingredients on the page as they're entered
 - Produce further results divs on the page using Javascript 
 - Make the bar responsive - read the length when it's less than 600px
+- Prevent an ingredient being submitted more than once to a recipe
 
 
 ##Future ideas
