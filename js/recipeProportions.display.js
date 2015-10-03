@@ -1,9 +1,12 @@
 var recipeProportionsModule = recipeProportionsModule || {};
 
-recipeProportionsModule.compareProportions = function () {
+recipeProportionsModule.displayBar = function () {
+
+    //var canvas, ctx;
+
 
   //add event listener to button; set up canvas
-
+/*
   document.addEventListener("DOMContentLoaded", function(event) {
 
     if (document.getElementById("saveIngredientButton").addEventListener) {
@@ -15,9 +18,9 @@ recipeProportionsModule.compareProportions = function () {
     };
 
     canvas = document.getElementById("recipeBar");
- //     if (canvas.getContext) {
- //     ctx = canvas.getContext('2d');
- //   }; 
+      if (canvas.getContext) {
+      ctx = canvas.getContext('2d');
+    }; 
 
   });
 
@@ -80,13 +83,18 @@ recipeProportionsModule.compareProportions = function () {
 
     totalAmount += ingredientObject.normalisedAmount;
 
-    //recipeProportionsModule.displayBar.drawBar(recipeProportions,totalAmount);
+    drawBar(recipeProportions,totalAmount);
   };
-
-
-/*
+*/
   //draw the canvas bar display
-  function drawBar(recipeProportions,totalAmount) {
+  //function drawBar(recipeProportions,totalAmount) {
+  this.drawBar = function(recipeProportions,totalAmount,canvas) {
+
+          if (canvas.getContext) {
+      ctx = canvas.getContext('2d');
+    }; 
+
+console.log(canvas.ctx)
 
     ctx.clearRect(0, 0, 600, 20);
     var barLength, barOffset=0;
@@ -111,15 +119,5 @@ recipeProportionsModule.compareProportions = function () {
 
       //console.log(recipeProportions);
     }
-  };*/
-
-  console.log(canvas);
-
-  //displayWhenFeedLoaded = function(result) {
-  recipeProportionsDisplay = new recipeProportionsModule.displayBar();
-  recipeProportionsDisplay.drawBar(recipeProportions,totalAmount,canvas);
-  //set error or loading message here
-//};
-
-
-}();
+  };
+};//need to take the () out here, otherwise 'not a function'
