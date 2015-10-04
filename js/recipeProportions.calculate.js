@@ -4,24 +4,7 @@ recipeProportionsModule.compareProportions = function () {
 
   //add event listener to button; set up canvas
 
-  document.addEventListener("DOMContentLoaded", function(event) {
-
-    if (document.getElementById("saveIngredientButton").addEventListener) {
-      (document.getElementById("saveIngredientButton")).addEventListener('click', submitParameters, false);
-    } else {
-    if (document.getElementById("saveIngredientButton").attachEvent) {
-      (document.getElementById("saveIngredientButton")).attachEvent('onclick', submitParameters);
-      };
-    };
-
-    recipeProportionsModule.canvas = document.getElementById("recipeBar");
-    recipeProportionsModule.canvas.width = recipeProportionsModule.totalBarLength;
-    recipeProportionsModule.canvas.height = 20;
-      if (recipeProportionsModule.canvas.getContext) {
-      recipeProportionsModule.ctx = recipeProportionsModule.canvas.getContext('2d');
-    }; 
-
-  });
+ 
 
   var totalAmount = 0;
   var recipeProportions = [];
@@ -30,6 +13,7 @@ recipeProportionsModule.compareProportions = function () {
   //submit form data, check it's not repeated
 
   function submitParameters(event) {
+    console.log("submit");
   //need check for nonsense/blank values - one stray char will break whole array, blank form gives NaN
     var ingredient = (document.getElementById("ingredient").value);
     var count = (document.getElementById("count").value);
