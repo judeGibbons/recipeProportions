@@ -14,18 +14,18 @@ recipeProportionsModule.compareProportions = function () {
       };
     };
 
-    canvas = document.getElementById("recipeBar");
-      if (canvas.getContext) {
-      ctx = canvas.getContext('2d');
+    recipeProportionsModule.canvas = document.getElementById("recipeBar");
+    recipeProportionsModule.canvas.width = recipeProportionsModule.totalBarLength;
+    recipeProportionsModule.canvas.height = 20;
+      if (recipeProportionsModule.canvas.getContext) {
+      recipeProportionsModule.ctx = recipeProportionsModule.canvas.getContext('2d');
     }; 
 
   });
 
-  var totalBarLength = 600; //needs to match width of canvas - use variable?
   var totalAmount = 0;
   var recipeProportions = [];
   var enteredIngredients = [];
-  var canvas, ctx;
 
   //submit form data, check it's not repeated
 
@@ -86,24 +86,26 @@ recipeProportionsModule.compareProportions = function () {
   //draw the canvas bar display
   function drawBar(recipeProportions,totalAmount) {
 
-    ctx.clearRect(0, 0, 600, 20);
+    recipeProportionsModule.ctx.clearRect(0, 0, 600, 20);
     var barLength, barOffset=0;
 
     for (var i=0, maxi=recipeProportions.length; i<maxi; i++) {
 
-      recipeProportions[i].barLength = Math.round((recipeProportions[i].normalisedAmount/totalAmount) * totalBarLength);
+      recipeProportions[i].barLength = Math.round((recipeProportions[i].normalisedAmount/totalAmount) * recipeProportionsModule.totalBarLength);
+
+
 
       if (i==0) {
-        ctx.fillStyle = "#00ff00";
+        recipeProportionsModule.ctx.fillStyle = "#00ff00";
       } else if (i==1) {
-        ctx.fillStyle = "#ff0000";
+        recipeProportionsModule.ctx.fillStyle = "#ff0000";
       } else if (i==2) {
-        ctx.fillStyle = "#0000ff";
+        recipeProportionsModule.ctx.fillStyle = "#0000ff";
       } else if (i==3) {
-        ctx.fillStyle = "#ff00ff";
+        recipeProportionsModule.ctx.fillStyle = "#ff00ff";
       }; 
 
-      ctx.fillRect(barOffset,0,recipeProportions[i].barLength,20);
+      recipeProportionsModule.ctx.fillRect(barOffset,0,recipeProportions[i].barLength,20);
 
       barOffset += recipeProportions[i].barLength;
 
