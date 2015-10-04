@@ -15,9 +15,9 @@ recipeProportionsModule.compareProportions = function () {
     };
 
     canvas = document.getElementById("recipeBar");
- //     if (canvas.getContext) {
- //     ctx = canvas.getContext('2d');
- //   }; 
+      if (canvas.getContext) {
+      ctx = canvas.getContext('2d');
+    }; 
 
   });
 
@@ -117,7 +117,7 @@ recipeProportionsModule.compareProportions = function () {
 
   //displayWhenFeedLoaded = function(result) {
   recipeProportionsDisplay = new recipeProportionsModule.displayBar();
-  recipeProportionsDisplay.drawBar(recipeProportions,totalAmount,canvas);
+  recipeProportionsDisplay.drawBar(recipeProportions,totalAmount,canvas,ctx);
   //set error or loading message here
 //};
 

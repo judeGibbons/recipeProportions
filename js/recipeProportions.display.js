@@ -88,13 +88,11 @@ recipeProportionsModule.displayBar = function () {
 */
   //draw the canvas bar display
   //function drawBar(recipeProportions,totalAmount) {
-  this.drawBar = function(recipeProportions,totalAmount,canvas) {
+  this.drawBar = function(recipeProportions,totalAmount,canvas,ctx) {
 
-          if (canvas.getContext) {
-      ctx = canvas.getContext('2d');
-    }; 
 
-console.log(canvas.ctx)
+
+//console.log(canvas.ctx)
 
     ctx.clearRect(0, 0, 600, 20);
     var barLength, barOffset=0;
