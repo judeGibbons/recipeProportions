@@ -1,19 +1,41 @@
 var recipeProportionsModule = recipeProportionsModule || {};
 
-recipeProportionsModule.init = function () {
-  
+if (window.addEventListener) {
+  window.addEventListener('DOMContentLoaded', init, false);
+} else if (window.attachEvent) {
+  if ( document.documentElement.doScroll && !isFrame ) {
+    function tryScroll(){
+      if (called) return
+      try {
+        document.documentElement.doScroll("left")
+        ready()
+      } catch(e) {
+        setTimeout(tryScroll, 10)
+      }
+    }
+    tryScroll()
+  }
+};
+
+function init() {
+  console.log("init");
   initBrowserEvents();
+
+};
+
+
+
+//recipeProportionsModule.init = function () {
+
+
   //initScreen();
   //grabAjaxData(); //get json bits
 
 
-
-
-
-
-}(); 
+//}; 
 
 function initBrowserEvents() {
+console.log("initBrowserEvents");
 
   document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -34,10 +56,12 @@ function initBrowserEvents() {
 
   });
 
-  var recipeProportionsCompareProportions = new recipeProportionsModule.compareProportions();
-  recipeProportionsCompareProportions.compareProportions();
+  //var recipeProportionsCompareProportions = new recipeProportionsModule.compareProportions();
+  //recipeProportionsModule.somethingElse();
 
 };
+
+  recipeProportionsModule.compareProportions();
 
 //displayWhenFeedLoaded = function(result) {
 

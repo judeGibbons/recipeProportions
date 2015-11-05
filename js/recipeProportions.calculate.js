@@ -4,11 +4,14 @@ recipeProportionsModule.compareProportions = function () {
 
   //add event listener to button; set up canvas
 
- 
+ console.log("compareProportions");
 
   var totalAmount = 0;
   var recipeProportions = [];
   var enteredIngredients = [];
+
+
+};
 
   //submit form data, check it's not repeated
 
@@ -96,4 +99,5 @@ recipeProportionsModule.compareProportions = function () {
       //console.log(recipeProportions);
     }
   };
-}();
+//};
+//};
